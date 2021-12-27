@@ -30,7 +30,7 @@ void Insert(int data){
     Node* temp = (Node*)malloc(sizeof(Node));
     temp->data = data;
     temp->next = head;
-    head = temp;
+    head = temp; 
 
 }
 void Reverse(){
