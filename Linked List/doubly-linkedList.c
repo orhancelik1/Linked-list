@@ -11,6 +11,7 @@ Node* head = NULL;
 
 Node *GetNewNode(int);
 void InsertAtHead(int);
+void InsertAtTail(int);
 void Print();
 void PrintReverse();
 
@@ -23,11 +24,15 @@ int main(int argc, char const *argv[])
     InsertAtHead(1);
     InsertAtHead(9);
     Print();
-    PrintReverse();
+    //PrintReverse();
+    InsertAtTail(10);
+    Print();
     
     return 0;
 }
 
+
+///get node
 Node *GetNewNode(int x){
 
     Node* newNode = (Node*)malloc(sizeof(Node));
@@ -39,6 +44,7 @@ Node *GetNewNode(int x){
 
 } 
 
+/////inserting functions
 void InsertAtHead(int data){
     Node* newNode = GetNewNode(data);
     if(head == NULL){
@@ -52,6 +58,25 @@ void InsertAtHead(int data){
 
 }
 
+void InsertAtTail(int data){
+    Node* newNode = GetNewNode(data);
+    if (head == NULL){
+        head = newNode;
+        return;
+    }
+    Node* temp = head;
+
+    while(temp->next!=NULL){
+        temp = temp->next;
+    }
+    temp->next = newNode;
+    newNode->prev = temp;
+    newNode->next = NULL;
+
+}
+
+
+///////print functions
 void Print(){
     Node* temp = head;
 
