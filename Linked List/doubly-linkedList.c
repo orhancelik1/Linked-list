@@ -23,10 +23,11 @@ int main(int argc, char const *argv[])
     InsertAtHead(6);
     InsertAtHead(1);
     InsertAtHead(9);
-    Print();
-    //PrintReverse();
     InsertAtTail(10);
+    InsertAtTail(12);
+    InsertAtTail(3);
     Print();
+    PrintReverse();
     
     return 0;
 }
